@@ -24,7 +24,7 @@
   </ng-template>
 </p-table> -->
 
-<h3>Checkbox Selection</h3>
+<!-- <h3>Checkbox Selection</h3>
 <p-table [columns]="cols" [value]="listComments" [(selection)]="comments" dataKey="id">
     <ng-template pTemplate="header" let-columns>
         <tr>
@@ -52,5 +52,25 @@
                 {{commit.id + ' - ' + commit.name + ' - ' + commit.email + ' - ' + commit.body}}
             </li>
         </ul>
+    </ng-template>
+</p-table> -->
+
+
+<h3>Teste</h3>
+<p-table [columns]="cols" [value]="listComments" [lazy]="true" (onLazyLoad)="loadCarsLazy($event)" [paginator]="true" 
+    [rows]="10" [totalRecords]="totalRecords" [loading]="loading">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+        </tr>
     </ng-template>
 </p-table>
