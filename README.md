@@ -1,2 +1,2 @@
 # json-placeholder-angular
- Projeto para estudos do componente angular com consumo de serviços web em https://jsonplaceholder.typicode.com
+ Project to study the angular component with the collection of primeng components and consumption of web services at https://jsonplaceholder.typicode.com
