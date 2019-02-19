@@ -22,20 +22,29 @@ export class CommentsComponent implements OnInit {
   totalRecords: number;
 
   ngOnInit() {
+    this.getListComments();
+    this.createColumns();
+    // this.datasource = null;
+    // this.totalRecords = 0;
+  }
+
+  createColumns(){
+    this.loading = true;
     this.cols = [
       { field: 'id', header: 'ID' },
       { field: 'name', header: 'Name' },
       { field: 'email', header: 'Email' },
       { field: 'body', header: 'Body' }
     ];
-    this.loading = true;
+    // this.loading = false;
   }
 
   getListComments(){
     this.commentsService.getListComments().subscribe((dados) => {
-        this.listComments = dados;
         this.datasource = dados;
         this.totalRecords = this.datasource.length;
+        // this.createColumns();
+        this.getListComments();
       },
       (error) => {
         console.error('error: ' + error);
@@ -43,7 +52,7 @@ export class CommentsComponent implements OnInit {
     )
   }
 
-  loadCarsLazy(event: LazyLoadEvent) {
+  loadComments(event: LazyLoadEvent) {
     this.loading = true;
 
     //in a real application, make a remote request to load data using state metadata from event
