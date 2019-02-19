@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TableModule} from 'primeng/table';
+import {DataViewModule} from 'primeng/dataview';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,8 @@ import {TableModule} from 'primeng/table';
     AccordionModule,
     BrowserAnimationsModule,
     TableModule,
+    DataViewModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
